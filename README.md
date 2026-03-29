@@ -107,7 +107,7 @@ minwind/
 │── script.js
 ```
 
-     ```demo_index.html``` is a live demo/playground file to showcase how Minwind works in real time.
+     **demo_index.html**  is a live demo/playground file to showcase how Minwind works in real time.
 
 ---
 
