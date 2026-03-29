@@ -1,6 +1,6 @@
 {
-  "name": "minwind",
-  "version": "1.0.4",
+  "name": "minwindcss",
+  "version": "1.0.5",
   "description": "MinWind is a lightweight JavaScript runtime CSS engine that parses min-* utility classes and applies styles directly to the DOM.",
   "homepage": "https://github.com/Minsu-Agrahari/minwind#readme",
   "bugs": {

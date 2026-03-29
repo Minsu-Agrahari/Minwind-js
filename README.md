@@ -1,6 +1,6 @@
-# minwind
+# Minwind CSS
 
-Minwind is a lightweight JavaScript runtime CSS engine that converts custom utility classes into inline styles directly in the browser.
+Minwind CSS is a lightweight JavaScript runtime CSS engine that converts custom utility classes into inline styles directly in the browser.
 
 Instead of writing CSS, you can use a simple syntax like:
 
@@ -8,21 +8,21 @@ Instead of writing CSS, you can use a simple syntax like:
 <h1 class="min-bg-red min-text-white min-p-10">Hello</h1>
 ```
 
-Minwind parses these classes and applies styles automatically.
+Minwind CSS parses these classes and applies styles automatically.
 
 ## Installation
 
 ### From npm
 ```Bash
-npm i minwind
+npm i minwindcss
 ```
 ---
 ### From GitHub
 ```Bash
-git clone https://github.com/Minsu-Agrahari/minwind.git
+git clone https://github.com/Minsu-Agrahari/minwindcss.git
 ```
 ```Bash
-cd minwind
+cd minwindcss
 ```
 
 Then include the script file:
@@ -35,11 +35,11 @@ Then include the script file:
 
 ### Using npm
 ```js
-import "minwind";
+import "minwindcss";
 ```
 
 ### Using CDN/ Script
-<script src="node_modules/minwind/script.js"></script>
+<script src="node_modules/minwindcss/script.js"></script>
 
 ### Example
 ```HTML
@@ -107,7 +107,7 @@ minwind/
 │── script.js
 ```
 
-     **demo_index.html**  is a live demo/playground file to showcase how Minwind works in real time.
+     demo_index.html is a live demo/playground file to showcase how Minwind works in real time.
 
 ---
 
@@ -157,6 +157,6 @@ Minsu Agrahari
 
 ## Summary
 
-MinWind is a beginner-friendly utility-first CSS engine that helps you understand how frameworks like Tailwind work internally while providing a simple and extendable styling system.
+MinWind CSS is a beginner-friendly utility-first CSS engine that helps you understand how frameworks like Tailwind work internally while providing a simple and extendable styling system.
 
 ---
