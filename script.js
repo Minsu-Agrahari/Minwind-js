@@ -38,54 +38,7 @@ element.forEach(el =>{
                 margin(el, parts[1]);
                 break;
 
-            case "m":
-                margin(el, parts[1]);
-                break;
-            case "m":
-                margin(el, parts[1]);
-                break;
-            case "m":
-                margin(el, parts[1]);
-                break;
-            case "m":
-                margin(el, parts[1]);
-                break;
-            case "m":
-                margin(el, parts[1]);
-                break;
-            case "m":
-                margin(el, parts[1]);
-                break;
-            case "m":
-                margin(el, parts[1]);
-                break;
-            case "m":
-                margin(el, parts[1]);
-                break;
-            case "m":
-                margin(el, parts[1]);
-                break;
-            case "m":
-                margin(el, parts[1]);
-                break;
-            case "m":
-                margin(el, parts[1]);
-                break;
-            case "m":
-                margin(el, parts[1]);
-                break;
-            case "m":
-                margin(el, parts[1]);
-                break;
-            case "m":
-                margin(el, parts[1]);
-                break;
-            case "m":
-                margin(el, parts[1]);
-                break;
-            case "m":
-                margin(el, parts[1]);
-                break;
+            
             default:
                 return "";
         }

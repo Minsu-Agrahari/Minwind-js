@@ -1,139 +1,51 @@
 # CSS with Minwind
 
-A Custom way to write CSS
+A custom utility CSS engine built in JavaScript.
 
-## Steps to follow:
+Minwind allows you to write classes like ```min-bg-grey``` or ```p5``` directly in HTML and dynamically applies styles at runtime.
 
-1. Extract classes 
-    ```
-    HTML -> collect all min-* classes
-    ```
+## How it Works
+Minwind does not generate CSS files.
+Instead, it parses class names and applies inline styles using JavaScript
 
-2. Make them unique
+## Supported Properties
+|Tag|CSS Property | Example Class | Output|
+|---|-------------|--------------|------|
+|bg | background | min-bg-grey | background: grey|
+|text| color| min-text-green| color: green|
+|p| padding| p-5| padding: 5px|
+|m | margin | m-5| margin: 5px|
 
-    ```
-    const unique = [...new Set(classes)]
-    ```
-
-3. Replace with CSS rules
-
-    ```
-    Convert class → CSS rules
-    ```
-
-    ### Convert Class → CSS
-
-    |Class            | CSS            |
-    |-----------------|----------------|
-    |min-bg-red       | background: red|
-    |min-color-yellow | color: yellow  |
-    |min-p6           | padding: 24px  |
-
-    ```ts
-    function generateCSS(cls) {
-
-        const parts = cls.split("-"); // ["min", "bg", "red"]
-
-        // < property, value >
-        const property = parts[1];
-        const value = parts[2];
-
-        switch (property) {
-            case "bg":
-                return `/${cls}{ background:${value}; }`;
-
-            case "color":
-                return `.${cls} { color: ${value}; }`;
-
-            case "p":
-                return `.${cls} { padding: ${value * 4}px; }`;
-
-            default:
-                return "";
-        }
-    }
-
-    ```
-4. Combine all CSS
-
-    ```js
-        const styles = unique.map(generateCSS).join("\n");
-    ```
-5. Inject into ```Style```
-    
-    ```js
-    const styleTag = document.createElement("style");
-    styleTag.innerText = style;
-    documnet.head.appendChild(styleTag);
-    ```
-
-## Final Flow 
-
+## Parser Flow
 ```
-HTML
-  ↓
-Extract min-* classes
-  ↓
-Remove duplicates
-  ↓
-Convert to CSS rules
-  ↓
-Inject style tag
-  ↓
-Browser applies styles automatically
+        HTML
+         ↓
+    Select all elements
+         ↓
+    Extract "-" classes
+         ↓
+    Parse Class (Property + values)
+         ↓
+    Apply styles via JS
+         ↓
+    DOM updates instantly
 ```
 
-
-## Propertys supports
-
-|tag  | property Name    |
-|-----|------------------|
-|bg   | background color |
-|text | color            |
-|m    | margin           |
-|p    | padding          |
-
-
-
-```js
-// select all the element
-const element = document.querySelectorAll("*");
-
-// Extract classes
-element.forEach(el => {
-    el.classList.forEach(cls => {
-        if(cls.startsWith("min-")){
-            
-        }
-    })
-})
-
---------------------------------------
-
-// // select element
-// const el = document.querySelector("h1");
-// console.log(el);
-
-// // get classes
-// const classes = [...el.classList];
-// console.log(classes);
-
-// // 
-// classes.forEach(cls => {
-//     if(!cls.startsWith("min-")) return;
-
-//     const parts = cls.split("-");
-
-//     // style handing
-//     if(parts[1] === "bg"){
-//         // background color
-//         const color = parts[2];
-//         el.style.backgroundColor = color;
-//     }
-//     {
-//         // text color
-//         const color = parts[1];
-//         el.style.color = color;
-//     }
-// });
+## Key Idea
+Minwind treats class names as instructions, not style.
 ```
+min-bg-grey → JS → element.style.background = "grey"
+```
+
+## Current Limitations
+* Limited property support (bg, text, margin, padding)
+* No responsive or state variants (hover, md, etc)
+* No class deduplication
+* Uses inline styles (not stylesheet)
+
+## Future Improvements
+* Add more utilities (flex, width, height, etc.)
+* Introduce mapping sustem instead of switch
+* Add responsive variants
+* Build JIT-style CSS generator
+* Optimize parsing performance
