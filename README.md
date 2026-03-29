@@ -19,7 +19,7 @@ npm i minwind
 ---
 ### From GitHub
 ```Bash
-git clone https://github.com/Minsu-Agrahari/Minwind-js.git
+git clone https://github.com/Minsu-Agrahari/minwind.git
 ```
 ```Bash
 cd minwind
